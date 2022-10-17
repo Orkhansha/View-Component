@@ -1,0 +1,43 @@
+﻿@using EntityFrameworkProject.Services
+@inject LayoutService _layout;
+
+@{
+
+    Dictionary<string, string> datas = await _layout.GetDatasFromSetting();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="img/favicon.png" sizes="192x192" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.5.2/sweetalert2.min.css" integrity="sha512-y6TjkITSFkRB9mZmDaJyDOsyHsYvOo3Np3iAKe02HgMDP4L4vbmbhlzNpbbIVC1x+GUUHvepTd1BKDe4kC6kNg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>@ViewData["Title"] - EntityFrameworkProject</title>
+</head>
+
+<body>
+
+    <!-- HEADER START -->
+    @await Component.InvokeAsync("Header")
+
+    <!-- HEADER END -->
+    @RenderBody()
+    <!-- FOOTER START -->
+
+    @await Component.InvokeAsync("Footer")
+
+</body>
+
+</html>
+
+
+
